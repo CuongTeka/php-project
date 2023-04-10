@@ -1,0 +1,19 @@
+
+TO DO LIST
+
+- remove offline boostrap5 folder, use the new online version
+- remove offline icon folder
+- edit logo/icon for better header
+- edit horizontal navigation bar for better pc user experience
+- maybe.. sort the project
+
+- complete the database
+- complete the admin page (function first, decoration later)
+- upload the product along with image and information
+- make the product page
+- make the shopping cart
+- paging
+
+
+
+- CREATE BACKUP

@@ -1,6 +1,6 @@
 <?php
-		if($_SERVER['SCRIPT_NAME']="taikhoan.php")
-		
+	$_SERVER['SCRIPT_NAME']="taikhoan.php";
+	
 ?>
 
 <div class="title" align="center">

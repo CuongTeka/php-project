@@ -20,10 +20,21 @@
 						header('location: Alpha_Store.php');
 						break;
 					case 'profile':
-                        
-						//-----
-						include "profile.php";
+                        //if(isset($_SESSION['role'])&&($_SESSION['role']==1))
+						//{
+						//	header('location: ../Data/admin/index.php');
+						//}
+						//else
+						//{
+							include "profile.php";
+						//}
+
 						break;
+					case 'sanpham':
+						include "sanpham.php";
+						break;
+					case 'gotoindex':
+						header('location: ../Data/admin/index.php');
 					default:
 						
 						break;

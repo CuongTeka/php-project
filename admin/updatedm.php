@@ -1,21 +1,19 @@
-<?php
-	$_SERVER['SCRIPT_NAME']="/danhmuc.php";
-	
-?>
 
 <div class="title">
-<h2>Danh mục</h2>
-<form action="index.php?act=adddm" method="post">
-	<input type="text" name="tendm" id="">
-	<input type="submit" name="themmoi" value="Thêm mới">
+<h2>Cập nhật danh mục</h2>
+<?php 
+	//var_dump($singlekq);
+?>
+<form action="index.php?act=updatedm" method="post">
+	<input type="text" name="tendm" id="" value="<?=$singlekq[0]['tendm'] ?>">
+	<input type="hidden" name="id" value="<?=$singlekq[0]['id']?>">
+	<input type="submit" name="capnhat" value="Cập nhật">
 </form>
 </div>
 <br>
 <table id="tb">
 	<tr>
-		<th>Chọn</th>
 		<th>STT</th>
-		<th>ID danh mục</th>
 		<th>Tên danh mục</th>
 		<th>Ưu tiên</th>
 		<th>Hiển thị</th>
@@ -30,11 +28,7 @@
 			foreach($kq as $dm)
 			{
 				echo '<tr>
-						<td>
-							<input class="form-check-input" type="checkbox" name="madm" value="'.$dm['id'].'">
-						</td>
 						<td>'.$i.'</td>
-						<td>'.$dm['id'].'</td>
 						<td>'.$dm['tendm'].'</td>
 						<td>'.$dm['uutien'].'</td>
 						<td>'.$dm['hienthi'].'</td>
@@ -46,14 +40,3 @@
 	?>
 	
 </table>
-<!-- <div style="padding:10px" align="center">
-	<form id="foot" method="post">
-		<input type="checkbox" id="selectall" >Chọn tất cả
-		<input type="submit" >check
-	</form>
-</div>
- -->
-
-
-
-

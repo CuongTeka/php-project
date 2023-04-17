@@ -1,73 +1,87 @@
+
+
+
 <?php
-	$_SERVER['SCRIPT_NAME']="sanpham.php";
-	
+		$_SERVER['SCRIPT_NAME']="sanpham.php";
+		
 ?>
 
 <div class="title" align="center">
-<h2>Sản phẩm</h2>
-<form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
+<h2>Cập nhật sản phẩm</h2>
+<form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
 <div class="table-responsive">
+
 	<table class="mx-auto w-auto" width="500" border="0">
 		<tr class="text">
 			<td>Danh mục: </td>
-			<td><select name="iddm" style="width:53%">
+			<td>
+				
+			<!-- <select name="iddm" style="width:53%"> -->
 				<?php
 					if(isset($dm)&&(count($dm)>0))
-					{
-						foreach($dm as $d)
-						{
-							echo '<option value="'.$d['id'].'">'.$d['id'].' - '.$d['tendm'].'</option>';
-						}
-					}
-				?></select>
+					{  
+						echo '<input type="text" name="iddm" value="'.$idddm.' - '.$ten.'">';
+						echo '<a class="btn btn-info" id="change" style="margin-left:10px">đổi danh mục</a>';
+						echo '<select name="iddm" id="iddm" style="width:47%">'; ?>
+							<?php
+							foreach($dm as $d)
+							{
+								echo '<option value="'.$d['id'].'">'.$d['id'].' - '.$d['tendm'].'</option>';
+							}
+						}?>
+					<?php echo '</select>'; //problem laying here and solved
+				?>
+				<!-- </select> Chọn lại danh mục -->
+				
 			</td>
 		</tr>
 		<tr>
 			<td>Tên sản phẩm: </td>
-			<td><input type="text" name="tensp" ></td>
+			<td><input type="text" name="tensp" value="<?=$singlekq[0]['tensp'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Đơn giá: </td>
-			<td><input type="number" name="dongia" ></td>
+			<td><input type="number" name="dongia" value="<?=$singlekq[0]['don_gia'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Giá khuyến mãi: </td>
-			<td><input type="number" name="giakm" ></td>
+			<td><input type="number" name="giakm" value="<?=$singlekq[0]['gia_khuyen_mai'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Bảo hành: </td>
-			<td><input type="text" name="bh" ></td>
+			<td><input type="text" name="bh" value="<?=$singlekq[0]['bao_hanh'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Đơn vị tính: </td>
-			<td><input type="text" name="dvt" ></td>
+			<td><input type="text" name="dvt" value="<?=$singlekq[0]['dvt'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Khuyến mãi: </td>
-			<td><input type="text" name="km" ></td>
+			<td><input type="text" name="km" value="<?=$singlekq[0]['khuyen_mai'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Quà tặng: </td>
-			<td><input type="text" name="qua" ></td>
+			<td><input type="text" name="qua" value="<?=$singlekq[0]['qua_tang'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Sẵn hàng: </td>
-			<td><input type="number" name="stock" ></td>
+			<td><input type="number" name="stock" value="<?=$singlekq[0]['kho'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Tình trạng: </td>
-			<td><input type="text" name="stat" ></td>
+			<td><input type="text" name="stat" value="<?=$singlekq[0]['tinh_trang'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Số lượng hình ảnh: </td>
-			<td><input type="number" name="imgnum" ></td>
+			<td><input type="number" name="imgnum" value="<?=$singlekq[0]['soluong_img'] ?>"></td>
 		</tr>
 		<tr>
 			<td>Hình ảnh: </td>
-			<td><input type="file" name="img" ></td>
+			<td><input type="file" name="img" value="<?=$singlekq[0]['img'] ?>"></td>
 		</tr>
+        <input type="hidden" name="id" value="<?=$singlekq[0]['id']?>">
 		<tr>
-			<td colspan="2" style="text-align:center; padding:10px"><input type="submit" name="themmoi" value="Thêm mới"></td>	
+            <td colspan="2" style="text-align:center; padding:10px"><input type="submit" name="capnhat" value="Cập nhật"></td>
 		</tr>
 	</table>
 </div>
